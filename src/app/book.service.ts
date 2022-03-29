@@ -15,11 +15,21 @@ export class BookService {
   ]
   constructor() { }
 
+  bookToBeUpdated = new Book();
   getBooks(): Book[] {
     return this.books;
   }
 
-  deleteBookRow(book: Book): void {
-    this.books.splice(this.books.indexOf(book), 1);
+  deleteBookRow(givenBook: Book): Book[] {
+    this.books = this.books.filter(book => givenBook.id != book.id)
+    return this.books;
+  }
+
+  setBookToBeUpdated(givenbook:Book){
+    this.bookToBeUpdated = givenbook;
+  }
+
+  getBookToBeUpdated(): Book{
+    return this.bookToBeUpdated;
   }
 }
