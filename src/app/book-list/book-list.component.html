@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Book Name</th>
+            <th scope="col">Publish Year</th>
+            <th scope="col">Avability</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.name}}</td>
+            <td>{{book.year}}</td>
+            <td *ngIf="book.availability">Available</td>
+            <td *ngIf="!book.availability">Brrowed</td>
+            <td><button class="btn btn-danger" (click)="deleteBook(book)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
