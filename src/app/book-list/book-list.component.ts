@@ -21,8 +21,8 @@ export class BookListComponent implements OnInit {
     this.books = this.bookService.deleteBookRow(book);
   }
 
-  updateBook(book: Book): void {
-    this.bookService.setBookToBeUpdated(book);
+  updateBook(book: Book,i:number): void {
+    this.bookService.setBookToBeUpdated(book,i);
     this.router.navigate(['updateForm']);
   }
 }

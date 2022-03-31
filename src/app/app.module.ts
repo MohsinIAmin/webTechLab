@@ -7,6 +7,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { UpdateBookFormComponent } from './update-book-form/update-book-form.component';
 import { FormsModule } from '@angular/forms';
+import { AddBookFormComponent } from './add-book-form/add-book-form.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     BookListComponent,
     UpdateBookFormComponent,
+    AddBookFormComponent,
   ],
   imports: [
     BrowserModule,

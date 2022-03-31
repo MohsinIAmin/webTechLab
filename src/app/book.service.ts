@@ -16,6 +16,7 @@ export class BookService {
   constructor() { }
 
   bookToBeUpdated = new Book();
+  bookToBeUpdatedIndex: any = 0;
   getBooks(): Book[] {
     return this.books;
   }
@@ -25,11 +26,21 @@ export class BookService {
     return this.books;
   }
 
-  setBookToBeUpdated(givenbook:Book){
+  setBookToBeUpdated(givenbook: Book, i: number) {
     this.bookToBeUpdated = givenbook;
+    this.bookToBeUpdatedIndex = i;
   }
 
-  getBookToBeUpdated(): Book{
+  getBookToBeUpdated(): Book {
     return this.bookToBeUpdated;
   }
+
+  updateBook(givenBook:Book) {
+    this.books.splice(this.bookToBeUpdatedIndex,1,givenBook);
+  }
+
+  addBook(givenBook:Book) {
+    this.books.push(givenBook);
+  }
+
 }

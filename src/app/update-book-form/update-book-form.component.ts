@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookService } from '../book.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { BookService } from '../book.service';
 })
 export class UpdateBookFormComponent implements OnInit {
 
-  constructor(private bookService :BookService) { }
+  constructor(private bookService :BookService, private router:Router) { }
 
   givenBook = this.bookService.getBookToBeUpdated();
 
@@ -17,6 +18,8 @@ export class UpdateBookFormComponent implements OnInit {
 
   updateBook():void {
     console.log(this.givenBook);
+    this.bookService.updateBook(this.givenBook);
+    this.router.navigate(['book']);
   }
 
 }
