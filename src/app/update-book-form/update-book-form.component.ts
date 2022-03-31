@@ -15,4 +15,8 @@ export class UpdateBookFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  updateBook():void {
+    console.log(this.givenBook);
+  }
+
 }
