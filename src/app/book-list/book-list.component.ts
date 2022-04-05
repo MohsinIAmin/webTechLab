@@ -10,7 +10,7 @@ import { Book } from '../Books';
 })
 export class BookListComponent implements OnInit {
 
-  constructor(private bookService: BookService, private router:Router) { }
+  constructor(private bookService: BookService, private router: Router) { }
 
   books = this.bookService.getBooks();
 
@@ -21,8 +21,8 @@ export class BookListComponent implements OnInit {
     this.books = this.bookService.deleteBookRow(book);
   }
 
-  updateBook(book: Book,i:number): void {
-    this.bookService.setBookToBeUpdated(book,i);
+  updateBook(book: Book, i: number): void {
+    this.bookService.setBookToBeUpdated(book, i);
     this.router.navigate(['updateForm']);
   }
 }

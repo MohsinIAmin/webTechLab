@@ -19,9 +19,7 @@ export class AddBookFormComponent implements OnInit {
 
   addBook(): void {
     this.bookService.addBook(this.newBook);
-    console.log(this.newBook);
     this.router.navigate(['book']);
-
   }
 
 }
